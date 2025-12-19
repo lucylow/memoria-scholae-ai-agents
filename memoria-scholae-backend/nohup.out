@@ -1,0 +1,9 @@
+--- MOCKING MEMMACHINE SERVICE: External MemMachine not available. Functionality will be limited. ---
+--- MOCKING NEO4J SERVICE: External Neo4j not available. Functionality will be limited. ---
+INFO:     Started server process [4958]
+INFO:     Waiting for application startup.
+2025-12-18 20:37:03,217 - main - INFO - Starting MemoriaScholae backend...
+2025-12-18 20:37:03,217 - main - INFO - MemMachine URL: http://localhost:8080
+2025-12-18 20:37:03,217 - main - INFO - Neo4j URI: neo4j://localhost:7687
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
