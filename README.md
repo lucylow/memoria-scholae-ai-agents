@@ -1,372 +1,176 @@
-Memoria Scholae 🧠🌐
-Research That Remembers - Memories That Last
-[![AI Agents Hackathon](https://img.shields.io/badge/AI%20Agents%20Hackathon-SFO28%202025-em![MemMachine](https://img.shields.io/badge/MemMachine-Persistent%20Memory-00D4FF![Neo4j](https://img.shields.io/badge/Neo4j-Graph%![LangGraph](https://img.shields.io/badge/LangGraph-Agent
-Multi-Agent Research Orchestra with persistent memory (MemMachine) + multi-hop graph reasoning (Neo4j). 2.8s end-to-end latency. 98% routing accuracy. 6 specialized agents.
-text
-Query: "Connect transformers + protein folding"
-↓ 47ms MemMachine recall (Mar 10th AlphaFold session)
-↓ 2.1ms Neo4j 3° bridge path (Attention → Geometric Reasoning)
-↓ Hypothesis: "+18% protein folding accuracy" [92% conf]
+# Memoria Scholae 🧠🌐
 
-[![Demo Video](https://img.shields.io/badge/Demo-2.8s%20Live%20Workflow-FF6B6B.svg
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-🚀%20Try%20Now-emerald.svg## 🎯 Hackathon Judging Criteria
-Criteria
-Implementation
-Score
-MemMachine Usage
-Episodic/Semantic/Procedural memory across 90-day sessions
-✅ 100%
-Neo4j Graph
-12 relationship types + 1-7° multi-hop Cypher reasoning
-✅ 100%
-Innovation
-Memory evolution + graph-native hypothesis generation
-✅ 100%
-Demo Quality
-Live Streamlit + 2.8s E2E + projector-ready D3.js
-✅ 100%
-Production
-LangGraph + HITL + Guardrails + TypeScript UI
-✅ 100%
+**Research That Remembers — Memories That Last**
 
-🏗️ Technical Architecture
-text
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   React 19 UI   │◄──►│  FastAPI Backend │◄──►│ LangGraph State │
-│                 │    │  (2.8s latency)  │    │   Machine       │
-│ • 60fps Motion  │    │                  │    │                 │
-│ • TailwindCSS   │    └──────┬───────────┘    └──────┬───────────┘
-│ • D3.js Graph   │           │                       │
-└─────────────────┘           │                       │
-                              ▼                       ▼
-                       ┌─────────────────┐    ┌─────────────────┐
-                       │  MemMachine     │    │    Neo4j        │
-                       │ Persistent      │    │ Knowledge Graph │
-                       │ Memory Layer    │    │                 │
-                       │ • 47ms recall   │    │ • Cypher 1-7°   │
-                       │ • 3 memory types│    │ • 12 rel types  │
-                       └─────────────────┘    └─────────────────┘
+[![AI Agents Hackathon](https://img.shields.io/badge/AI%20Agents%20Hackathon-SFO28%202025-informational)](https://devpost.com)
+[![MemMachine](https://img.shields.io/badge/MemMachine-Persistent%20Memory-00D4FF)](https://memmachine.ai)
+[![Neo4j](https://img.shields.io/badge/Neo4j-Graph-yellow)](https://neo4j.com)
+[![LangGraph](https://img.shields.io/badge/LangGraph-Agent-orange)](https://github.com/langgraph)
 
-🚀 6-Agent Research Orchestra
-Agent
-Role
-Latency
-Tech
-PI Agent
-Semantic routing + auction
-47ms
-MemMachine recall
-Literature
-Paper gaps + ingestion
-1.2s
-Semantic search
-Critic
-Flaw detection
-0.8s
-Methodology validation
-Synthesizer
-Cross-domain bridges
-2.1ms
-Neo4j Cypher
-Hypothesis
-Novel predictions
-1.5s
-Graph synthesis
-Writing
-Publication format
-0.9s
-Professional output
+Memoria Scholae is a research assistant platform that combines a persistent memory layer (MemMachine) with graph-native multi-hop reasoning (Neo4j) and a multi-agent orchestration layer (LangGraph). The system is optimized for low-latency recall, auditable provenance, and production-safe agent workflows.
 
-python
-# Core LangGraph workflow
-graph.add_conditional_edges(
-    "pi", route_agent,
-    {"literature": "literature", "synthesizer": "synthesizer", "hypothesis": "hypothesis"}
-)
-graph.add_edge("literature", "critic")
-graph.add_edge("critic", "synthesizer") 
-graph.add_edge("synthesizer", "hypothesis")
-graph.add_edge("hypothesis", "writing")
+---
 
-🧠 MemMachine Persistent Memory
-3 Memory Types → Cross-Session Intelligence
-python
-# Episodic: "You read AlphaFold Mar 10th, 45min, 82% conf"
-await memmachine.store(episode, memory_type="episodic", ttl=None)  # Permanent
+# Overview
 
-# Semantic: Extracted concepts + embeddings  
-await memmachine.search("attention protein", researcher_id="lucylow", threshold=0.65)
+Short technical summary of what the system provides and why it matters.
 
-# Procedural: Research patterns evolve
-await memmachine.store(patterns, memory_type="procedural", importance=0.95)
+* Persistent memory and session recall that capture episodic, semantic, and procedural artifacts.
+* Graph-native knowledge representation enabling 1–7° multi-hop reasoning and novelty scoring.
+* LangGraph-driven agent orchestration: routing, ingestion, critique, synthesis, hypothesis generation, and automated writing.
+* Observability and production guardrails: latency metrics, HITL gating, SHA256 auditable logs, and RBAC.
 
-Demo Proof:
-text
-Mar 10: AlphaFold stored ✓
-Mar 15: Transformers stored ✓
-Today: Recalls BOTH → 3° hypothesis ✓
+A canonical user flow:
 
-🌐 Neo4j Multi-Hop Reasoning
-12 Relationship Types + 1-7° Pathfinding
-text
--- 🔥 Gold: 3° Bridge Discovery
-MATCH path=(:SelfAttention)-[:RELATED_TO*1..3]-(:ProteinContacts)
-RETURN shortestPath(path), length(path) as hops
-ORDER BY hops ASC  -- Shorter = More Novel
+* Query arrives → LangGraph routes to PI agent → MemMachine recall enriches context → Literature agent indexes into Neo4j → Synthesizer runs multi-hop Cypher → Hypothesis is generated and scored → Output delivered or HITL mandated.
 
--- 12 Relationship Types
-[:DISCUSSES|:APPLIES_TO|:EXTENDS|:CONTRADICTS|:CITES|:BRIDGES|:IMPLEMENTS|:EVALUATES|:IMPROVES|:VALIDATES|:CHALLENGES|:SYNTHESIZES]
+---
 
-Live Metrics:
-text
-• 8 nodes/paper (PDF → Graph: 25s)
-• 3° novelty paths (92% confidence)
-• 2.1ms Cypher queries
+# Architecture (visual)
 
-🎨 Production Frontend (60fps)
-React 19 + Framer Motion + TailwindCSS + D3.js
-tsx
-// Live Neo4j Graph Animation
-const simulation = d3.forceSimulation(nodes)
-  .force("link", d3.forceLink(links).distance(100))
-  .force("charge", d3.forceManyBody().strength(-300));
+Use this mermaid diagram in docs or renderers that support it. It compresses the architecture into a single technical view.
 
-// 6-Agent Orchestra Status (WebSocket)
-<AgentStatus agentId="hypothesis" status="thinking" />
+```mermaid
+flowchart LR
+  UI[React UI / WebSocket] -->|HTTP / WS| API[FastAPI]
+  API -->|LangGraph tasks| Orchestrator[LangGraph State Machine]
+  Orchestrator --> MemMachine[MemMachine: Persistent Memory<br/>episodic/semantic/procedural]
+  Orchestrator --> Neo4j[Neo4j: Knowledge Graph<br/>nodes, typed edges]
+  Agents[Agents: PI, Literature, Critic, Synthesizer, Hypothesis, Writer] -->|read/write| MemMachine
+  Agents -->|read/write| Neo4j
+  Orchestrator --> Agents
+  Neo4j -->|query| API
+```
 
-Features:
-Glassmorphism + Neon gradients (2025 aesthetic)
-Live path animations (gold 3° bridges)
-PDF drag & drop → Real-time graph growth
-MemMachine timeline visualization
-HITL approval modals
-🛡️ Production Safeguards
-text
-✅ Layer 1: Input validation (OWASP Top 1)
-✅ Layer 2: PII anonymization (regex + Guardrails AI)  
-✅ Layer 3: RBAC (researcher/admin/viewer)
-✅ Layer 4: Output moderation (hallucination detection)
-✅ Layer 5: Audit logging (SHA256 + timestamps)
-✅ HITL: 4 intervention points (<85% conf → human)
+Design emphasis:
 
-⚡ Performance Benchmarks
-text
-End-to-End: 2.8s (P95)
-├─ MemMachine recall: 47ms
-├─ Neo4j Cypher: 2.1ms  
-├─ Agent orchestration: 2.3s
-└─ Frontend render: 16ms (60fps)
+* MemMachine is the contextual store (fast vector and metadata store).
+* Neo4j holds structured, typed knowledge enabling path search and scoring.
+* LangGraph persists intermediate task state and controls agent handoffs.
 
-Frontend Lighthouse: 100/100
-Memory: 47MB (optimized)
-Network: 28KB gzipped
+---
 
-🚀 Quick Start
-bash
-# Clone + Install
-git clone https://github.com/yourusername/memoria-scholae
-cd memoria-scholae
-npm install && pip install -r requirements.txt
+# Technical components
 
-# Backend (MemMachine + Neo4j)
-docker-compose up neo4j memmachine
-uvicorn main:app --reload
+Short descriptions of the major components and key technical details to know when developing or deploying.
 
-# Frontend (60fps)
-npm run dev
+## Frontend
 
-# Live Demo: http://localhost:3000/demo
+* React (v19) with TypeScript, TailwindCSS, Framer Motion.
+* D3.js force simulation for Neo4j graph visualization.
+* WebSocket channel for live agent status and progress updates.
 
-📁 Project Structure
-text
-memoria-scholae/
-├── backend/
-│   ├── agents/           # 6 specialized agents
-│   ├── memmachine/       # Persistent memory layer
-│   ├── neo4j/            # Cypher queries + graph population
-│   └── guardrails.py     # 5-layer safety system
-├── frontend/
-│   ├── components/
-│   │   ├── Neo4jGraph.tsx     # Live D3.js visualization
-│   │   ├── AgentOrchestra.tsx # 6 live agent status
-│   │   └── MultiPageNav.tsx   # Responsive navigation
-│   └── pages/
-│       ├── Demo.tsx
-│       └── Landing.tsx
-└── docker-compose.yml    # Neo4j + MemMachine
+## API / Backend
 
-🏆 Hackathon Results
-$500 Grand Prize Winner - MemMachine Award - Neo4j Innovation
-text
-Judges: "Perfect sponsor tech integration. Live demo flawless."
-"Memory evolution + graph reasoning = breakthrough research assistant."
+* FastAPI exposing:
 
-🤝 Acknowledgments
-MemMachine: Persistent memory sponsor memmachine.ai
-Neo4j: Graph reasoning sponsor neo4j.com
-LangChain: LangGraph orchestration langchain-ai.github.io/langgraph
-AI Agents Hackathon SFO28: Dec 17-18, 2025
-📄 License
-text
-MIT License - Free for research + commercial use
-See LICENSE for details
+  * MemMachine wrappers
+  * Neo4j bridge endpoints
+  * Orchestration entrypoints for LangGraph workflows
+  * Health and metrics endpoints
+* End-to-end targets: P95 ≈ 2.8s; MemMachine recall ≈ 47ms; Neo4j Cypher ≈ 2.1ms.
 
+## LangGraph (Orchestrator)
 
-⭐ Star us on GitHub! - Deploy in 60s - Production Ready - Hackathon Champion 🏆
-![Demo GIF](https://via.placeholder.com/1200x600/0a0a0a/00D4FF?text=Memoria+Sch
+* Orchestrates the multi-agent pipeline: routing, retries, state persistence.
+* Tasks are small, deterministic functions that store inputs/outputs to MemMachine with trace metadata.
+* HITL gating when `confidence < 0.85`.
 
+## MemMachine (Persistent Memory)
 
-# 2 — Repository layout (what’s in this repo)
+* Stores messages with metadata: `episodic`, `semantic`, `procedural`.
+* Exposes store and search HTTP endpoints (used as fast contextual retrieval).
+* Recommended record shape:
+
+  ```json
+  {
+    "type":"episodic",
+    "producer":"lucylow",
+    "content":"AlphaFold 3: geometric priors ...",
+    "timestamp":"2025-03-10T14:22:00Z",
+    "metadata":{"session":"alpha-2025-03-10","tags":["alphafold","attention"],"confidence":0.82}
+  }
+  ```
+
+## Neo4j (Graph Reasoning)
+
+* Canonical nodes: `Concept`, `Paper`, `Experiment`, `Researcher`.
+* Relationship types: `DISCUSSES, APPLIES_TO, EXTENDS, CONTRADICTS, CITES, BRIDGES, IMPLEMENTS, EVALUATES, IMPROVES, VALIDATES, CHALLENGES, SYNTHESIZES`.
+* Example Cypher multi-hop query:
+
+  ```cypher
+  MATCH path = shortestPath((:Concept {name:$c1})-[*1..5]-(:Concept {name:$c2}))
+  RETURN path, length(path) AS hops
+  ORDER BY hops ASC
+  LIMIT 5;
+  ```
+
+---
+
+# Project layout
 
 ```
 memoria-scholae/
-├── backend/
-│   ├── agents/
-│   │   ├── pi_agent/
-│   │   ├── literature_agent/
-│   │   ├── critic_agent/
-│   │   ├── synthesizer_agent/
-│   │   ├── hypothesis_agent/
-│   │   └── writer_agent/
-│   ├── api/                     # FastAPI app + REST glue
-│   ├── memmachine/              # MemMachine client helpers
-│   ├── neo4j/                   # Neo4j client wrappers and Cypher templates
-│   └── langgraph/               # LangGraph workflows & runners
-├── frontend/
-│   ├── src/
-│   │   ├── components/          # Neo4jGraph.tsx, AgentOrchestra.tsx etc.
-│   │   └── pages/
-├── infra/
-│   ├── docker-compose.yml
-│   ├── k8s/                     # deployment + job manifests
-│   └── terraform/               # optional infra helpers
-├── seeder/                      # Dockerfile + seeder.py
-├── scripts/
-│   ├── dev-up.sh
-│   └── run-local-tests.sh
-├── .github/
-│   └── workflows/ci.yml
-├── .env.example
-├── README.md                    # ← this file
-└── LICENSE
+├─ backend/                # FastAPI + LangGraph wiring
+│  ├─ api/
+│  ├─ agents/
+│  ├─ memmachine/
+│  ├─ neo4j/
+│  └─ seeder/
+├─ frontend/               # React + D3 + Framer Motion
+├─ infra/
+│  ├─ docker-compose.yml
+│  └─ k8s/
+├─ scripts/
+├─ seeder/
+├─ .env.example
+├─ README.md
+└─ LICENSE
 ```
 
 ---
 
-# 3 — Architecture (high-level)
+# Quickstart — local development
 
-```
-User UI  <->  FastAPI  <->  LangGraph (state machine)
-                              /    \
-                     MemMachine     Neo4j
-                      (vector)     (graph)
-                         ^           ^
-                         |           |
-                    Agents (6) ---> writes/provenance
-```
-
-**Primary components**
-
-* **Frontend (React + D3 + Framer Motion)**: Query input, live agent status WS, Neo4j graph visualization, HITL modals.
-* **API (FastAPI)**: Aggregates UI requests, triggers LangGraph workflows, returns synthesis + provenance.
-* **LangGraph**: Orchestrates tasks (recall → ingest → critique → synthesize → hypothesize → write) with state persistence & retry semantics.
-* **MemMachine**: Persistent episodic/semantic/procedural memory (vector search + profile extraction).
-* **Neo4j**: Concept nodes, paper nodes, experiments, edges with relationship types + multi-hop queries.
-* **Agents**: 6 microservices or serverless functions (PI, Literature, Critic, Synthesizer, Hypothesis, Writer). Each logs outputs and writes provenance to MemMachine and Neo4j.
-
-**Latency targets (design)**
-
-* MemMachine recall: ~50ms
-* Neo4j Cypher (1–3 hops): ~2ms
-* Agent orchestration: ~2s
-* End-to-end P95: ~2.8s
-
----
-
-# 4 — Data model (MemMachine + Neo4j)
-
-## MemMachine memory record (recommended JSON shape)
-
-* `type`: `"episodic" | "semantic" | "procedural"`
-* `producer`: e.g. `"user-lucylow"` or `"agent-literature"`
-* `content`: raw text or structured JSON
-* `timestamp`: ISO8601
-* `metadata`: `{ session_id, source_url, doi, tags, confidence, duration_mins }`
-
-**Example**
-
-```json
-{
-  "type":"episodic",
-  "producer":"lucylow",
-  "content":"AlphaFold 3 notes: geometric priors in residue attention.",
-  "timestamp":"2025-03-10T14:22:00Z",
-  "metadata":{"session":"alpha-2025-03-10","tags":["alphafold","attention"],"confidence":0.82}
-}
-```
-
-## Neo4j graph model (recommended)
-
-Nodes:
-
-* `(:Concept {name, created_at, vector_norm?})`
-* `(:Paper {doi, title, year, text_hash})`
-* `(:Experiment {id, metrics, params})`
-* `(:Researcher {id, name})`
-
-Relationships (12 canonical relationship types):
-
-* `:DISCUSSES, :APPLIES_TO, :EXTENDS, :CONTRADICTS, :CITES, :BRIDGES, :IMPLEMENTS, :EVALUATES, :IMPROVES, :VALIDATES, :CHALLENGES, :SYNTHESIZES`
-
-Relationship properties:
-
-* `confidence` (float), `evidence_snippet` (string), `created_by` (string), `created_at` (ts)
-
----
-
-# 5 — Quickstart — local dev (Docker Compose)
-
-This quickstart will bring up **MemMachine**, **Neo4j** and the **backend** service locally.
-
-## Prereqs
+Prerequisites
 
 * Docker & Docker Compose
-* Python 3.11 (for local dev of backend)
-* Node 18+ (frontend)
+* Python 3.11 for backend local dev
+* Node 18+ for frontend
 
-## 1) Clone
+Set environment
 
 ```bash
 git clone https://github.com/yourusername/memoria-scholae.git
 cd memoria-scholae
 cp .env.example .env
-# Edit .env: set NEO4J_PASSWORD and any embedder key (OPENAI_API_KEY) if required
+# edit .env to set NEO4J_PASSWORD and optional OPENAI_API_KEY
 ```
 
-## 2) Start services
+Bring up services
 
 ```bash
 docker-compose up -d
-# view logs
+# monitor
 docker-compose logs -f memmachine neo4j backend
 ```
 
-## 3) Seed mock data
+Seed demo data
 
-Option A — run packaged seeder container:
+* Run the provided seeder to push example memories and paper nodes:
 
 ```bash
 docker build -t memoria-seeder ./seeder
 docker run --rm --env-file .env memoria-seeder
 ```
 
-Option B — run locally:
+* Or run locally:
 
 ```bash
 python seeder/seeder.py
 ```
 
-## 4) Run backend + frontend (dev)
+Run services in dev mode
 
 ```bash
 # backend
@@ -380,69 +184,50 @@ npm install
 npm run dev
 ```
 
-Open:
+Open
 
 * Frontend UI: `http://localhost:3000`
-* Backend API docs: `http://localhost:8000/docs`
-* Neo4j Browser: `http://localhost:7474` (use `neo4j` / password in `.env`)
+* Backend docs: `http://localhost:8000/docs`
+* Neo4j browser: `http://localhost:7474` (neo4j / password)
 
 ---
 
-# 6 — Configuration files
+# Configuration
 
-## `.env.example`
+`.env.example` (copy to `.env` and edit)
 
 ```ini
-# MemMachine
 MEMMACHINE_BASE=http://memmachine:8080
 MEMMACHINE_ORG=memoria-org
 MEMMACHINE_PROJECT=memoria-project
 
-# Neo4j (local dev) or Neo4j Aura (cloud)
 NEO4J_URI=bolt://neo4j:7687
 NEO4J_USER=neo4j
 NEO4J_PASSWORD=ChangeMeLocally!
 
-# OPTIONAL: Neo4j Aura
-# NEO4J_URI=neo4j+s://<your-id>.databases.neo4j.io
-# NEO4J_USER=neo4j
-# NEO4J_PASSWORD=<aura-password>
-
-# Embedding / LLM provider (if MemMachine configured to use OpenAI)
 OPENAI_API_KEY=
-
-# App runtime
 PORT=8000
 ```
 
-## `docker-compose.yml` (core excerpt)
+Docker Compose excerpt
 
 ```yaml
-version: "3.8"
 services:
   memmachine:
     image: memmachine/memmachine:latest
-    env_file: .env
     ports: ["8080:8080"]
-    healthcheck: { test: ["CMD-SHELL","curl -f http://localhost:8080/health || exit 1"], interval: 10s, retries: 5 }
-
   neo4j:
     image: neo4j:5.12-enterprise
-    environment: [ "NEO4J_AUTH=neo4j/${NEO4J_PASSWORD}" ]
+    environment: ["NEO4J_AUTH=neo4j/${NEO4J_PASSWORD}"]
     ports: ["7474:7474","7687:7687"]
-    volumes: ["neo4j-data:/data"]
-
   backend:
     build: ./backend/api
     env_file: .env
     depends_on: [memmachine, neo4j]
     ports: ["8000:8000"]
-
-volumes:
-  neo4j-data:
 ```
 
-## Neo4j constraints (run once)
+Neo4j constraints to apply once
 
 ```cypher
 CREATE CONSTRAINT IF NOT EXISTS FOR (c:Concept) REQUIRE c.name IS UNIQUE;
@@ -451,134 +236,19 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (p:Paper) REQUIRE p.doi IS UNIQUE;
 
 ---
 
-# 7 — Seeder / mock data (scripts + container)
+# Example snippets
 
-The seeder posts mock episodic & semantic messages to MemMachine and verifies a simple semantic search.
-
-## `seeder/seeder.py`
+MemMachine store example (Python)
 
 ```python
-#!/usr/bin/env python3
-import os, time, requests, json
-BASE = os.environ.get("MEMMACHINE_BASE","http://localhost:8080")
-ORG = os.environ.get("MEMMACHINE_ORG","memoria-org")
-PROJECT = os.environ.get("MEMMACHINE_PROJECT","memoria-project")
-HEADERS = {"Content-Type":"application/json"}
-
-def create_project():
-    r = requests.post(f"{BASE}/api/v2/projects", json={"org_id":ORG,"project_id":PROJECT,"description":"Memoria demo"}, headers=HEADERS)
-    print("project:", r.status_code, r.text)
-
-def add_messages(msgs):
-    r = requests.post(f"{BASE}/api/v2/memories", json={"org_id":ORG,"project_id":PROJECT,"messages":msgs}, headers=HEADERS)
-    print("add:", r.status_code)
-    print(json.dumps(r.json(), indent=2))
-
-if __name__ == "__main__":
-    create_project()
-    now = time.strftime("%Y-%m-%dT%H:%M:%SZ")
-    messages = [
-        {"content":"AlphaFold 3: geometric priors in residue attention maps.","producer":"lucylow","produced_for":"lit-agent","role":"user","timestamp":now,"metadata":{"tags":["alphafold","attention"],"confidence":0.82}},
-        {"content":"Paper: Self-Attention is Geometric - excerpt: attention reflects coordinate locality.","producer":"lucylow","produced_for":"lit-agent","role":"user","timestamp":now,"metadata":{"doi":"10.000/xyz"}}
-    ]
-    add_messages(messages)
-    q = {"org_id":ORG,"project_id":PROJECT,"query":"attention protein geometric","k":5}
-    r = requests.post(f"{BASE}/api/v2/memories/search", json=q, headers=HEADERS)
-    print("search:", r.status_code, json.dumps(r.json(), indent=2))
+await memmachine.store(
+  episodic={"read_date":"2025-03-10", "confidence":0.82},
+  semantic={"concepts":["GeometricReasoning","ProteinContacts"]},
+  ttl=None
+)
 ```
 
-## Dockerfile (seeder)
-
-```dockerfile
-FROM python:3.11-slim
-WORKDIR /app
-COPY seeder.py .
-RUN pip install requests
-ENV MEMMACHINE_BASE=http://memmachine:8080
-CMD ["python","seeder.py"]
-```
-
----
-
-# 8 — LangGraph orchestration — workflow & examples
-
-LangGraph manages task dependencies and state. Below is a simplified state machine pseudocode demonstrating the core "research_query" workflow.
-
-## pseudocode: `research_query` workflow
-
-```python
-from langgraph import StateMachine
-from memmachine_client import MemMachineClient
-from neo4j_client import Neo4jClient
-from agents import LiteratureAgent, CriticAgent, SynthesizerAgent, HypothesisAgent, WriterAgent
-
-sm = StateMachine("research_query")
-
-@sm.task
-def recall(query, user_id):
-    mm = MemMachineClient()
-    return {"recalls": mm.search(query, user_id=user_id, memory_types=["episodic","semantic"], k=12)}
-
-@sm.task(depends_on=[recall])
-def ingest(recalls):
-    lit = LiteratureAgent.extract_and_index(recalls)
-    Neo4jClient.bulk_upsert(lit["nodes"], lit["edges"])
-    return {"lit": lit}
-
-@sm.task(depends_on=[ingest])
-def critic(lit):
-    return CriticAgent.evaluate(lit)
-
-@sm.task(depends_on=[critic])
-def synthesize(lit, critic_res):
-    return SynthesizerAgent.find_bridges(lit["concepts"], max_hops=5)
-
-@sm.task(depends_on=[synthesize])
-def hypothesize(bridges):
-    return HypothesisAgent.generate(bridges)
-
-@sm.task(depends_on=[hypothesize])
-def write(hypo):
-    return WriterAgent.render(hypo)
-```
-
-**Operational rules**
-
-* Each task stores an episodic record in MemMachine with `inputs_sha256` and `outputs_sha256`.
-* If `hypothesis.confidence < 0.85`, LangGraph routes to `human_review` state; publishing is blocked until a human approves.
-* Trace ID propagation: LangGraph attaches `trace_id` to each MemMachine entry for distributed tracing.
-
----
-
-# 9 — Neo4j schema & multi-hop Cypher recipes (novelty scoring)
-
-## Basic setup
-
-```cypher
-CREATE CONSTRAINT IF NOT EXISTS FOR (c:Concept) REQUIRE c.name IS UNIQUE;
-CREATE CONSTRAINT IF NOT EXISTS FOR (p:Paper) REQUIRE p.doi IS UNIQUE;
-```
-
-## Example upsert (node + relationship)
-
-```cypher
-MERGE (c:Concept {name:$name})
-ON CREATE SET c.created_at = datetime()
-RETURN c;
-```
-
-## Shortest bridge (multi-hop)
-
-```cypher
-:param c1 => 'SelfAttention'
-:param c2 => 'ProteinContacts'
-MATCH path = shortestPath((a:Concept {name:$c1})-[*1..5]-(b:Concept {name:$c2}))
-RETURN path, length(path) AS hops
-ORDER BY hops ASC
-LIMIT 5;
-```
-
-## Novelty scoring (shorter paths + rarer nodes upweight)
+Cypher multi-hop novelty query
 
 ```cypher
 MATCH path=(a:Concept {name:$c1})-[rels*1..5]-(b:Concept {name:$c2})
@@ -589,156 +259,108 @@ ORDER BY novelty_score DESC
 LIMIT 10;
 ```
 
-> **Note:** `apoc` functions require APOC plugin enabled (available in enterprise / some Aura versions). If `apoc` is not available, compute degree via `size((n)--())` and aggregate using Cypher list functions.
+LangGraph workflow pseudocode
+
+```python
+# recall -> ingest -> critic -> synthesize -> hypothesize -> write
+graph.add_node("pi", pi_agent)
+graph.add_node("literature", literature_agent)
+graph.add_edge("pi","literature")
+graph.add_edge("literature","critic")
+graph.add_edge("critic","synthesizer")
+graph.add_edge("synthesizer","hypothesis")
+graph.set_entry_point("pi")
+```
 
 ---
 
-# 10 — Kubernetes deployment & seeder Job
+# Testing & CI
 
-## 1) Store Neo4j credentials as Kubernetes Secret
-
-```bash
-kubectl create secret generic neo4j-aura-secret \
-  --from-literal=NEO4J_URI='neo4j+s://<id>.databases.neo4j.io' \
-  --from-literal=NEO4J_USER='neo4j' \
-  --from-literal=NEO4J_PASSWORD='<password>' \
-  -n memoria
-```
-
-## 2) Deployment snippet (memmachine + backend)
-
-`k8s/deployment-memmachine.yaml` (see `infra/k8s/` in repo) — uses `secretKeyRef` to inject `NEO4J_*` vars.
-
-## 3) Seeder Job (run once)
-
-`k8s/job-seed-memmachine.yaml` runs the seeder container that points to `http://memmachine:8080` and populates the project/memories.
-
----
-
-# 11 — CI / GitHub Actions (seed + tests)
-
-Example `.github/workflows/ci.yml` (simplified):
-
-```yaml
-name: CI
-on: [push, pull_request]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    env:
-      MEMMACHINE_BASE: ${{ secrets.MEMMACHINE_URL }}
-      NEO4J_URI: ${{ secrets.NEO4J_URI }}
-      NEO4J_USER: ${{ secrets.NEO4J_USER }}
-      NEO4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Backend unit tests
-        working-directory: backend/api
-        run: |
-          python -m pip install -r requirements.txt
-          pytest -q
-
-      - name: Seed remote MemMachine (integration)
-        run: |
-          python seeder/seeder.py
-        env:
-          MEMMACHINE_BASE: ${{ secrets.MEMMACHINE_URL }}
-```
-
-**Caveat:** CI seeding assumes a reachable MemMachine instance. If you want CI to provision a temporary Neo4j/Aura instance, you must add additional infra steps (Terraform or API calls) and safe teardown to avoid costs.
-
----
-
-# 12 — Observability, security & production guardrails
-
-## Observability
-
-* **Logging**: JSON logs for every agent call: `{ task_id, agent_id, start_ts, end_ts, duration_ms, inputs_sha256, outputs_sha256 }`
-* **Tracing**: OpenTelemetry traces propagated across tasks; store `trace_id` in MemMachine episodic entries.
-* **Metrics**: Prometheus metrics: `memmachine_query_latency_seconds`, `neo4j_query_latency_seconds`, `agent_task_duration_seconds`, `hypothesis_confidence_histogram`.
-
-## Security / Guardrails
-
-* **Secrets**: Keep `NEO4J_PASSWORD`, `OPENAI_API_KEY`, and provider creds in Secret Manager / K8s Secrets (encrypted).
-* **PII protection**: NER + regex scrubbing prior to write into persistent memory. Mask or redact PII automatically.
-* **HITL policy**: Any hypothesis with `confidence < 0.85` triggers a review workflow; human annotator must approve before publishing.
-* **Audit**: Every mutation includes `created_by`, `task_id`, and `sha256(raw_output)`. Immutable audit log stored in MemMachine (or external append-only store).
-* **RBAC**: API enforces researcher / admin / viewer permissions scoped by MemMachine `org_id`/`project_id`.
-
----
-
-# 13 — Troubleshooting & FAQ
-
-**Q: MemMachine profile extraction returns no semantic results**
-A: Check embedder/LLM provider keys (e.g., `OPENAI_API_KEY`) in `.env` or secret store — MemMachine needs an embedding provider configured for semantic extraction.
-
-**Q: Neo4j connection errors with Aura**
-A: Use `neo4j+s://<id>.databases.neo4j.io` and ensure outbound TLS allowed. Check driver version and network egress rules.
-
-**Q: Cypher multi-hop queries slow or OOM**
-A: Add constraints/indexes, increase instance sizing (for Aura), use `shortestPath()` and limit `max_hops`, and paginate results.
-
-**Q: LangGraph tasks failing intermittently**
-A: Ensure each agent returns consistent JSON and the LangGraph runner retries transient errors. Log inputs SHA256 for reproducibility.
-
----
-
-# 14 — Repro / deploy checklist (one page)
-
-1. Clone repo & copy `.env`:
+Local unit tests with pytest
 
 ```bash
-git clone https://github.com/yourusername/memoria-scholae.git
-cd memoria-scholae
-cp .env.example .env
-```
-
-2. Edit `.env`: set `NEO4J_PASSWORD`, `OPENAI_API_KEY` (if used).
-3. Start local stack:
-
-```bash
-docker-compose up -d
-docker-compose logs -f memmachine neo4j backend
-```
-
-4. Build & run seeder:
-
-```bash
-docker build -t memoria-seeder ./seeder
-docker run --rm --env-file .env memoria-seeder
-```
-
-5. Start backend & frontend (dev):
-
-```bash
-# backend
 cd backend/api
-pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
-
-# frontend
-cd frontend
-npm install
-npm run dev
+pytest -q
 ```
 
-6. Validate end-to-end:
+Recommended CI actions
 
-* Query UI: `Connect transformers + protein folding`
-* Validate MemMachine recall: check MemMachine `/api/v2/memories/search` results
-* Validate Neo4j: `MATCH (n) RETURN n LIMIT 25` in Neo4j Browser
+* Run unit tests for backend and frontend
+* Run seeder against a disposable MemMachine instance in integration tests
+* Optional: provision temporary Neo4j Aura in CI for end-to-end validation (costs apply)
+
+Example GitHub Actions (CI)
+
+* Checkout
+* Install backend deps, run `pytest`
+* Optionally seed MemMachine using secrets
 
 ---
 
-# 15 — License, credits & next steps
+# Observability and safety
 
-**License:** MIT — see `LICENSE`.
+Observability
 
-**Credits & sponsors**
+* JSON structured logs from agents with `{task_id, agent_id, duration_ms, inputs_sha256, outputs_sha256}`
+* Prometheus metrics:
 
-* **MemMachine** — persistent memory (Docker Hub: `memmachine/memmachine`)
-* **Neo4j** — graph database & research reasoning (Neo4j Aura recommended)
-* **LangGraph** — stateful orchestration for agent pipelines
+  * `memmachine_query_latency_seconds`
+  * `neo4j_query_latency_seconds`
+  * `agent_task_duration_seconds`
+  * `hypothesis_confidence`
 
+Safety & guardrails
+
+* Input validation & prompt-injection protection
+* PII auto-redaction before persistent storage
+* HITL gating for outputs under confidence threshold
+* Immutable audit logs with SHA256 hashes for traceability
+* RBAC for researcher/admin/viewer roles
+
+---
+
+# Troubleshooting
+
+MemMachine returns no semantic results
+
+* Ensure an embedding provider is configured (OPENAI_API_KEY or equivalent)
+* Check MemMachine logs for embedder errors
+
+Neo4j connection issues
+
+* Confirm `NEO4J_URI` and credentials, use `neo4j+s://` for Aura with TLS
+* Validate network egress and DNS for Aura endpoints
+
+Slow multi-hop queries or OOM
+
+* Add constraints and indexes
+* Use `shortestPath()` and limit `max_hops`
+* Increase instance size or use Aura scaling
+
+LangGraph task failures
+
+* Check agent output format (must be JSON-serializable)
+* Enable retries and inspect per-task logs for inputs/outputs
+
+---
+
+# Next steps & roadmap (developer-oriented)
+
+* Improve embedding quality by integrating multiple embedder backends
+* Add multi-researcher collaborative memory with conflict resolution
+* Turn memmachine/neo4j fallback adapters into pluggable providers for local dev
+* Add a web-based HITL review UX with annotations and diff view
+* Harden production observability: distributed tracing + alert runbooks
+
+---
+
+# Credits, license, and acknowledgments
+
+Sponsor integrations and ideas:
+
+* MemMachine — persistent memory
+* Neo4j — graph reasoning and Aura for managed hosting
+* LangGraph — stateful orchestration engine
+
+License: MIT — see `LICENSE`.
 
